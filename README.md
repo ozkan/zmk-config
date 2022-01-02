@@ -1,6 +1,19 @@
 # Reviung41 Keymaps (zmk, nice!nano, colemak)
 ![reviung41](reviung41.png)
 
+```
+Keyboard: Reviung41
+Default Layer: Colemak
+Keyboard Firmware: ZMK
+Board: Nice!Nano
+Microcontroller: Nordic nRF52840
+
+Input Language (PC)
+(the default layout for given language)
+Layout Display Name: Turkish Q
+Layout Text: Turkish Q
+```
+
 ## Reviung41
 ### COLEMAK LAYER (default)
 ``` 
