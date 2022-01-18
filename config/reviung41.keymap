@@ -112,7 +112,7 @@
     // ,-------------------------------------------------- -+         +------------------------------------------.
     // |   ESC  |   !    |   @   |   €     |    £  |   Ğ    |         |      |      |   Ü  |      |  :   |  DEL  |
     // |--------+--------+-------+---------+-------+--------+         +------+------+------+------+------+-------|
-    // |        |        |       |    Ş    |   ₺   | SPACE  |        |      |      | S(ı) |   I  |  Ö   |  '    |
+    // |        |        |       |    Ş    |   ₺   | SPACE  |         |   <  |   >  | S(ı) |   I  |  Ö   |  '    |
     // |--------+--------+-------+---------+-------+--------+         +------+------+------+------+------+-------|
     // |        |        |       |    Ç    |       |        |         |      |      |   <  |   >  |      |       |
     // |--------+--------+-------+---------+-------+--------+         +------+------+------+------+------+-------|
@@ -121,9 +121,9 @@
 
     space_layer {
     bindings = <
-    &kp ESC  &kp EXCL  &kp RA(Q)  &kp RA(E)  &kp  RA(N2)  &kp LBKT            &trans   &trans   &kp RBKT           &trans               &kp LS(SLASH)   &kp DEL
-    &trans   &trans    &trans     &kp SEMI   &kp  RA(T)   &kp SPACE           &trans   &trans   &kp LS(I)          &kp I                &kp COMMA       &kp LS(N2)
-    &trans   &trans    &trans     &kp DOT     &trans      &trans              &trans   &trans   &kp NON_US_BSLH    &kp RS(NON_US_BSLH)  &kp UNDER       &trans
+    &kp ESC  &kp EXCL  &kp RA(Q)  &kp RA(E)  &kp  RA(N2)  &kp LBKT            &trans           &trans                &kp RBKT    &trans   &kp LS(SLASH)   &kp DEL
+    &trans   &trans    &trans     &kp SEMI   &kp  RA(T)   &kp SPACE           &kp NON_US_BSLH  &kp RS(NON_US_BSLH)   &kp LS(I)   &kp I    &kp COMMA       &kp LS(N2)
+    &trans   &trans    &trans     &kp DOT     &trans      &trans              &trans           &trans                &trans      &trans   &kp UNDER       &trans
                                                     &trans  &trans    &trans    &trans     &trans
                     >;
             };
