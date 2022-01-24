@@ -48,9 +48,9 @@
    };
 };
 
-&caps_word {
-    continue-list = <UNDERSCORE MINUS>;
-};
+// &caps_word {
+//     continue-list = <UNDERSCORE MINUS>;
+// };
 
 / {
   keymap {
