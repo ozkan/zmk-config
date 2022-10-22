@@ -19,6 +19,11 @@
 
 
 
+&mt {
+  tapping-term-ms = <500>;
+  quick_tap_ms = <200>;
+};
+
 &spi1 {
 	compatible = "nordic,nrf-spim";
 	status = "okay";
