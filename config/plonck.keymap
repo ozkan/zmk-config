@@ -46,7 +46,7 @@
                 &kp ESC         &kp Q      &kp W        &kp F       &kp P              &kp G             &kp J             &kp L       &kp U                 &kp Y          &kp LS(NON_US_HASH) &kp BSPC
                 &kp LCTRL       &kp A      &kp R        &kp S       &lt _NAVIGATION T  &kp D             &kp H             &kp N       &kp E                 &kp SQT        &kp O               &kp LS(N2)
                 &mt LSHFT CLCK  &mt LALT Z &mt LCTRL X  &mt LSHFT C &kp V              &kp B             &kp K             &kp M       &mt RSHFT NON_US_HASH &mt RCTRL FSLH &mt LALT RS(N7)     &mt RSHFT RET
-                &mo _ADJUST     &kp LALT  &kp LCTRL     &kp LGUI    &mo _LOWER         &lt _TAB TAB    &lt _SPACE SPACE  &mo _RAISE  &kp LEFT              &kp UP         &kp DOWN            &kp RIGHT
+                &mo _ADJUST     &kp LALT  &kp LCTRL     &kp LGUI    &mo _LOWER         &lt _TAB TAB      &lt _SPACE SPACE  &mo _RAISE  &kp LEFT              &kp UP         &kp DOWN            &kp RIGHT
                 >;
             };
 
@@ -66,7 +66,7 @@
                 &kp ESC      &trans    &trans     &trans    &trans      &trans          &kp RS(N8)        &kp RS(N9)  &kp RS(N0)       &kp RS(N6)           &kp RA(EQUAL)  &trans
                 &trans       &trans    &trans     &trans    &trans      &trans          &kp RA(N7)        &kp RA(N0)  &kp PLUS         &kp RA(N4)           &kp RA(N3)     &kp GRAVE
                 &trans       &trans    &trans     &trans    &trans      &trans          &kp RA(N8)        &kp RA(N9)  &kp NON_US_BSLH  &kp RS(NON_US_BSLH)  &kp RA(MINUS)  &trans
-                &mo _ADJUST  &kp LALT  &kp LCTRL  &kp LGUI  &mo _LOWER  &lt _SPACE TAB  &lt _SPACE SPACE  &mo _RAISE  &kp LEFT         &kp UP               &kp DOWN       &kp RIGHT
+                &mo _ADJUST  &kp LALT  &kp LCTRL  &kp LGUI  &mo _LOWER  &lt _TAB TAB    &kp RET           &mo _RAISE  &kp LEFT         &kp UP               &kp DOWN       &kp RIGHT
             >;
         };
         
@@ -86,7 +86,7 @@
                 &kp ESC      &kp AMPS    &kp N1     &kp N2    &kp N3      &kp KP_MINUS    &kp F1            &kp F2      &kp F3    &kp F4   &trans    &kp DEL
                 &trans       &kp MINUS   &kp N4     &kp N5    &kp N6      &kp KP_PLUS     &kp F5            &kp F6      &kp F7    &kp F8   &trans    &trans
                 &caps_word   &kp PRCNT   &kp N7     &kp N8    &kp N9      &kp N0          &kp F9            &kp F10     &kp F11   &kp F12  &trans    &trans
-                &mo _ADJUST  &kp LALT    &kp LCTRL  &kp LGUI  &mo _LOWER  &lt _SPACE TAB  &lt _SPACE SPACE  &mo _RAISE  &kp LEFT  &kp UP   &kp DOWN  &kp RIGHT
+                &mo _ADJUST  &kp LALT    &kp LCTRL  &kp LGUI  &mo _LOWER  &lt _TAB TAB    &lt _SPACE SPACE  &mo _RAISE  &kp LEFT  &kp UP   &kp DOWN  &kp RIGHT
             >;
         };
 
@@ -106,7 +106,7 @@
                 &kp ESC      &trans    &trans     &kp RA(E)        &kp  RA(N2)  &kp LBKT        &trans            &trans      &trans     &trans   &trans    &trans
                 &trans       &kp EXCL  &kp RA(Q)  &kp SEMI         &kp  RA(T)   &kp SPACE       &trans            &trans      &trans     &trans   &trans    &trans
                 &trans       &trans    &trans     &mt LSHFT  DOT   &trans       &trans          &trans            &trans      &trans     &trans   &trans    &trans
-                &mo _ADJUST  &kp LALT  &kp LCTRL  &kp LGUI         &mo _LOWER   &lt _SPACE TAB  &lt _SPACE SPACE  &mo _RAISE  &kp LEFT   &kp UP   &kp DOWN  &kp RIGHT
+                &mo _ADJUST  &kp LALT  &kp LCTRL  &kp LGUI         &mo _LOWER   &lt _TAB TAB    &lt _SPACE SPACE  &mo _RAISE  &kp LEFT   &kp UP   &kp DOWN  &kp RIGHT
             >;
         };
 
@@ -126,7 +126,7 @@
                 &kp ESC      &trans    &trans     &kp RA(E)        &kp  RA(N2)  &kp LBKT        &trans            &trans      &trans     &trans   &trans    &trans
                 &trans       &kp EXCL  &kp RA(Q)  &kp SEMI         &kp  RA(T)   &kp SPACE       &trans            &trans      &trans     &trans   &trans    &trans
                 &trans       &trans    &trans     &mt LSHFT  DOT   &trans       &trans          &trans            &trans      &trans     &trans   &trans    &trans
-                &mo _ADJUST  &kp LALT  &kp LCTRL  &kp LGUI         &mo _LOWER   &lt _SPACE TAB  &lt _SPACE SPACE  &mo _RAISE  &kp LEFT   &kp UP   &kp DOWN  &kp RIGHT
+                &mo _ADJUST  &kp LALT  &kp LCTRL  &kp LGUI         &mo _LOWER   &lt _TAB TAB    &lt _SPACE SPACE  &mo _RAISE  &kp LEFT   &kp UP   &kp DOWN  &kp RIGHT
             >;
         };
 
@@ -147,7 +147,7 @@
                 &kp ESC      &trans    &trans     &trans    &trans       &trans          &kp C_PREV        &kp PG_UP   &kp UP     &trans         &trans         &trans
                 &trans       &trans    &trans     &trans    &trans       &trans          &kp HOME          &kp LEFT    &kp DOWN   &kp RIGHT      &kp END        &kp C_PLAY_PAUSE
                 &trans       &trans    &trans     &trans    &trans       &trans          &kp C_NEXT        &kp PG_DN   &none      &kp C_VOL_DN   &kp C_VOL_UP   &kp C_MUTE
-                &mo _ADJUST  &kp LALT  &kp LCTRL  &kp LGUI  &mo _LOWER   &lt _SPACE TAB  &lt _SPACE SPACE  &mo _RAISE  &kp LEFT   &kp UP         &kp DOWN       &kp RIGHT
+                &mo _ADJUST  &kp LALT  &kp LCTRL  &kp LGUI  &mo _LOWER   &lt _TAB TAB    &lt _SPACE SPACE  &mo _RAISE  &kp LEFT   &kp UP         &kp DOWN       &kp RIGHT
             >;
         };
 
