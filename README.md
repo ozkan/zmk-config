@@ -15,7 +15,7 @@ Layout Display Name: Turkish Q
 Layout Text: Turkish Q
 ```
 
-## REVUNG41
+## REVIUNG41
 ### Colemak Layer (default)
 ```
 ╭──────┬──────┬──────┬──────┬──────┬──────╮            ╭──────┬──────┬──────┬──────┬──────┬──────╮
