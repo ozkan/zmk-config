@@ -13,8 +13,7 @@
 #
 ---
 include:
+  - board: cockpit_ble
   - board: nice_nano_v2
     shield: reviung41
-#  - board: sparkfun_pro_micro_rp2040
-#    shield: reviung41
   - board: plonck

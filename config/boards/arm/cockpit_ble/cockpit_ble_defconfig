@@ -1,0 +1,50 @@
+
+CONFIG_SOC_SERIES_NRF52X=y
+CONFIG_SOC_NRF52840_QIAA=y
+CONFIG_BOARD_COCKPIT_BLE=y
+
+# Enable MPU
+CONFIG_ARM_MPU=y
+
+# enable GPIO
+CONFIG_GPIO=y
+
+CONFIG_USE_DT_CODE_PARTITION=y
+CONFIG_MPU_ALLOW_FLASH_WRITE=y
+CONFIG_BUILD_OUTPUT_UF2=y
+CONFIG_NVS=y
+CONFIG_SETTINGS_NVS=y
+CONFIG_FLASH=y
+CONFIG_FLASH_PAGE_LAYOUT=y
+CONFIG_FLASH_MAP=y
+
+# Enable SPI
+#  CONFIG_SPI_NRFX=y
+#  CONFIG_SPI=y
+
+# Enable PINCTRL
+CONFIG_PINCTRL_NRF=y
+CONFIG_PINCTRL=y
+
+# Enable the rotary encoder
+CONFIG_EC11=y
+CONFIG_EC11_TRIGGER_GLOBAL_THREAD=y
+
+# Enable support to control external power output (y)
+# CONFIG_ZMK_EXT_POWER=y
+
+# Enable sleep
+CONFIG_ZMK_SLEEP=y
+CONFIG_ZMK_IDLE_SLEEP_TIMEOUT=1800000
+
+# Enable 32kHz crystal
+CONFIG_CLOCK_CONTROL_NRF_K32SRC_XTAL=y
+CONFIG_CLOCK_CONTROL_NRF_K32SRC_30PPM=y
+
+#CONFIG_ZMK_USB_LOGGING=y
+
+# set TX power level
+# CONFIG_BT_CTLR_TX_PWR_PLUS_8=y // Recommended if used in a metal enclosure
+
+# Low level setting for GATT subscriptions. Set to n to work around an annoying Windows bug with battery notifications. (y)
+CONFIG_BT_GATT_ENFORCE_SUBSCRIPTION=n

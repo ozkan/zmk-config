@@ -1,0 +1,11 @@
+file_format: "1"
+id: cockpit_ble
+name: cockpit_ble
+type: board
+url: https://githbub.com/ozkan
+exposes: [i2c_oled]
+features:
+  - keys
+  - display
+  - underglow
+  - encoder
