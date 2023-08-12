@@ -67,6 +67,14 @@
             bindings = <&rgb_ug RGB_EFF>, <&rgb_ug RGB_EFR>;
         };
     };
+    combos {
+        compatible = "zmk,combos";
+        combo_del {
+            timeout-ms = <50>;
+            key-positions = <10 11>;
+            bindings = <&kp DEL>;
+        };
+    };
 
     keymap {
         compatible = "zmk,keymap";
