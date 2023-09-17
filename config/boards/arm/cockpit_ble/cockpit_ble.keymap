@@ -24,7 +24,14 @@
 // Using layer taps on thumbs, having quick tap as well helps w/ repeating space
 &lt {
   quick_tap_ms = <200>;
-};  
+};
+
+&left_encoder {
+     resolution = <4>; 
+};
+&right_encoder {
+     resolution = <4>; 
+};
 
 
 / {
@@ -42,8 +49,8 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
-            tapping-term-ms = <150>;
-            quick-tap-ms = <125>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <150>;
             global-quick-tap;
             bindings = <&kp>, <&kp>;
         };
@@ -63,6 +70,7 @@
 
     keymap {
         compatible = "zmk,keymap";
+        default_layer {
        // ╭──────┬──────┬──────┬──────┬──────┬──────╮                          ╭──────┬──────┬──────┬──────┬──────┬──────╮
        // │  ESC │  Q   │  W   │  F   │  P   │  G   │                          │  J   │  L   │  U   │  Y   │   ;  │ BSPC │
        // ├──────┼──────┼──────┼──────┼──────┼──────┤                          ├──────┼──────┼──────┼──────┼──────┼──────┤
@@ -71,8 +79,8 @@
        // │SFT_CL│ALT Z │CTL X │SFT C │  V   │  B   │         (ENCODERS)       │  K   │  M   │SFT , │CTL . │ALT / │ ENT  │
        // ╰──────┴──────┴──────┼──────┼──────┼──────┴─╮ ╭────────╮╭────────╮ ╭─┴──────┼──────┼──────┼──────┴──────┴──────╯
        //                      │  ALT │LOWER │ SPACE  │ │  PAUSE ││  PAUSE │ │ SPACE  │RAISE │ WIN  │
-       //                      ╰──────┴──────┴────────╯ ╰────────╯╰────────╯ ╰────────┴──────┴──────╯
-        default_layer {
+       //                      ╰──────┴──────┴────────╯ ╰────────╯╰────────╯ ╰────────┴──────┴──────╯            
+            label = "Colemak";
             bindings = <
                 &kp ESC        &kp Q      &kp W       &kp F       &kp P              &kp G                           &kp J &kp L  &kp U                 &kp Y          &kp LS(NON_US_HASH) &kp BSPC
                 &kp LCTRL      &kp A      &kp R       &kp S       &lt _NAVIGATION T  &kp D                           &kp H &kp N  &kp E                 &kp SQT        &kp O               &kp LS(N2)
@@ -91,7 +99,8 @@
         // │      │      │      │      │      │      │                          │  [   │  ]   │  <   │  >   │  \   │ ENT  │
         // ╰──────┴──────┴──────┼──────┼──────┼──────┴─╮ ╭────────╮╭────────╮ ╭─┴──────┼──────┼──────┼──────┴──────┴──────╯
         //                      │  ALT │LOWER │ SPACE  │ │  PREV  ││  NEXT  │ │  ENTER │RAISE │ WIN  │
-        //                      ╰──────┴──────┴────────╯ ╰────────╯╰────────╯ ╰────────┴──────┴──────╯            
+        //                      ╰──────┴──────┴────────╯ ╰────────╯╰────────╯ ╰────────┴──────┴──────╯    
+            label = "Lower";        
             bindings = <
                 &kp ESC  &trans  &trans   &trans        &trans          &trans                        &kp RS(N8)  &kp RS(N9)      &kp RS(N0)        &kp RS(N6)           &kp RA(EQUAL)  &trans
                 &trans   &trans  &trans   &trans        &trans          &trans                        &kp RA(N7)  &kp RA(N0)      &kp PLUS          &kp RA(N4)           &kp RA(N3)     &kp GRAVE
@@ -111,7 +120,8 @@
         // │      │  %   │  7   │  8   │  9   │  0   │                          │  F9  │  F10 │ F11  │  F1  │      │      │
         // ╰──────┴──────┴──────┼──────┼──────┼──────┴─╮ ╭────────╮╭────────╮ ╭─┴──────┼──────┼──────┼──────┴──────┴──────╯
         //                      │  ALT │LOWER │ SPACE  │ │  PAUSE ││  PAUSE │ │ SPACE  │RAISE │ WIN  │
-        //                      ╰──────┴──────┴────────╯ ╰────────╯╰────────╯ ╰────────┴──────┴──────╯            
+        //                      ╰──────┴──────┴────────╯ ╰────────╯╰────────╯ ╰────────┴──────┴──────╯   
+            label = "Raise";         
             bindings = <
                 &kp ESC      &kp AMPS    &kp N1    &kp N2        &kp N3         &kp KP_MINUS                      &kp F1  &kp F2                  &kp F3            &kp F4       &trans   &kp DEL
                 &trans       &kp MINUS   &kp N4    &kp N5        &kp N6         &kp KP_PLUS                       &kp F5  &kp F6                  &kp F7            &kp F8       &trans   &trans
@@ -130,7 +140,8 @@
         // │      │      │      │  Ç   │      │      │                          │      │      │      │      │      │      │
         // ╰──────┴──────┴──────┼──────┼──────┼──────┴─╮ ╭────────╮╭────────╮ ╭─┴──────┼──────┼──────┼──────┴──────┴──────╯
         //                      │  ALT │LOWER │ SPACE  │ │  PAUSE ││  PAUSE │ │ SPACE  │RAISE │ WIN  │
-        //                      ╰──────┴──────┴────────╯ ╰────────╯╰────────╯ ╰────────┴──────┴──────╯            
+        //                      ╰──────┴──────┴────────╯ ╰────────╯╰────────╯ ╰────────┴──────┴──────╯
+            label = "Space R";            
             bindings = <
                 &kp ESC      &trans    &trans     &kp RA(E)        &kp  RA(N2)     &kp LBKT                      &trans            &trans                  &trans          &trans   &trans    &trans
                 &trans       &kp EXCL  &kp RA(Q)  &kp SEMI         &kp  RA(T)      &trans                        &trans            &trans                  &trans          &trans   &trans    &trans
@@ -148,7 +159,8 @@
         // │      │      │      │      │      │      │                          │      │      │  ^   │  ~   │  ?   │ ENT  │
         // ╰──────┴──────┴──────┼──────┼──────┼──────┴─╮ ╭────────╮╭────────╮ ╭─┴──────┼──────┼──────┼──────┴──────┴──────╯
         //                      │  ALT │LOWER │ SPACE  │ │RGB_TOG ││ EP_TOG │ │ SPACE  │RAISE │ WIN  │
-        //                      ╰──────┴──────┴────────╯ ╰────────╯╰────────╯ ╰────────┴──────┴──────╯            
+        //                      ╰──────┴──────┴────────╯ ╰────────╯╰────────╯ ╰────────┴──────┴──────╯
+            label = "Space L";            
             bindings = <
                 &trans       &trans    &trans     &trans         &trans             &trans                     &trans          &trans      &kp RBKT            &trans         &kp LS(SLASH)   &kp DEL
                 &trans       &trans    &trans     &trans         &trans             &trans                     &trans          &trans      &kp LS(I)           &kp I          &kp COMMA       &kp RA(NON_US_HASH)
@@ -167,7 +179,8 @@
         // │      │      │      │      │      │      │                          │C_NEXT│PGDOWN│      │VLDOWN│ VLUP │MUTE  │
         // ╰──────┴──────┴──────┼──────┼──────┼──────┴─╮ ╭────────╮╭────────╮ ╭─┴──────┼──────┼──────┼──────┴──────┴──────╯
         //                      │  ALT │LOWER │ SPACE  │ │  PAUSE ││  PAUSE │ │ SPACE  │RAISE │ WIN  │
-        //                      ╰──────┴──────┴────────╯ ╰────────╯╰────────╯ ╰────────┴──────┴──────╯        
+        //                      ╰──────┴──────┴────────╯ ╰────────╯╰────────╯ ╰────────┴──────┴──────╯   
+            label = "Navi";     
             bindings = <
                 &kp ESC      &trans    &trans     &trans           &trans       &trans       &kp C_PREV              &kp PG_UP   &kp UP                  &trans         &trans         &trans
                 &trans       &trans    &trans     &trans           &trans       &trans       &kp HOME                &kp LEFT    &kp DOWN                &kp RIGHT      &kp END        &kp C_PLAY_PAUSE
@@ -185,7 +198,8 @@
         // │      │      │      │      │      │      │                          │RESET │ BOOT │      │O_USB │O_BLE │OUTTOG│
         // ╰──────┴──────┴──────┼──────┼──────┼──────┴─╮ ╭────────╮╭────────╮ ╭─┴──────┼──────┼──────┼──────┴──────┴──────╯
         //                      │  ALT │LOWER │ SPACE  │ │  PAUSE ││  PAUSE │ │ SPACE  │RAISE │ WIN  │
-        //                      ╰──────┴──────┴────────╯ ╰────────╯╰────────╯ ╰────────┴──────┴──────╯            
+        //                      ╰──────┴──────┴────────╯ ╰────────╯╰────────╯ ╰────────┴──────┴──────╯    
+            label = "Adjust";        
             bindings = <
                 &rgb_ug RGB_BRI &rgb_ug RGB_SAI &rgb_ug RGB_HUI &rgb_ug RGB_EFF &none &rgb_ug RGB_TOG              &bt BT_SEL 0 &bt BT_SEL 1  &bt BT_SEL 2 &bt BT_SEL 3       &bt BT_SEL 4        &bt BT_CLR
                 &rgb_ug RGB_BRD &rgb_ug RGB_SAD &rgb_ug RGB_HUD &rgb_ug RGB_EFR &none &none                        &none        &none         &none        &ext_power EP_ON   &ext_power EP_OFF   &ext_power EP_TOG

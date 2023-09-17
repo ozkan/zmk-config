@@ -36,34 +36,31 @@
 	};
 
 	left_encoder: encoder_left {
-        compatible = "alps,ec11";
+		compatible = "alps,ec11";
         label = "LEFT_ENCODER";
         a-gpios = <&gpio0 12 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
         b-gpios = <&gpio0 23 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-        resolution = <4>;
-        status = "okay";
+        steps = <80>;
     };
 
     right_encoder: encoder_right {
-            compatible = "alps,ec11";
-            label = "RIGHT_ENCODER";
-            a-gpios = <&gpio0 21 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-            b-gpios = <&gpio0 19 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-            resolution = <4>;
-            status = "okay";
-        };
-
+		compatible = "alps,ec11";
+        label = "LEFT_ENCODER";
+        a-gpios = <&gpio0 21 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        b-gpios = <&gpio0 19 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        steps = <80>;
+    };
 
     sensors {
-            compatible = "zmk,keymap-sensors";
-            sensors = <&left_encoder &right_encoder>;
+		compatible = "zmk,keymap-sensors";
+        sensors = <&left_encoder &right_encoder>;
+        triggers-per-rotation = <20>;
         };
 
 	ext-power {
 		compatible = "zmk,ext-power-generic";
 		label = "EXT_POWER";
 		control-gpios = <&gpio1 9 GPIO_ACTIVE_HIGH>;
-		init-delay-ms = <50>;
 	};
 
 	vbatt: vbatt {
@@ -116,6 +113,15 @@
 };
 
 
+&left_encoder {
+    status = "okay";
+};
+
+&right_encoder {
+    status = "okay";
+};
+
+
 &gpio0 {
 	status = "okay";
 };
@@ -136,11 +142,12 @@
 	};
 };
 
-&left_encoder {
-    status = "okay";
-};
 
-&right_encoder {
-    status = "okay";
+&uart0 {
+    compatible = "nordic,nrf-uarte";
+    current-speed = <115200>;
+    pinctrl-0 = <&uart0_default>;
+    pinctrl-1 = <&uart0_sleep>;
+    pinctrl-names = "default", "sleep";
 };
 
