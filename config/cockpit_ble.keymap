@@ -54,6 +54,20 @@
             global-quick-tap;
             bindings = <&kp>, <&kp>;
         };
+        en_i: en_i {
+            compatible = "zmk,behavior-mod-morph";
+            label = "EN_I";
+            #binding-cells = <0>;
+            bindings = <&kp SQT>, <&kp LS(I)>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        tr_i: tr_i {
+            compatible = "zmk,behavior-mod-morph";
+            label = "TR_I";
+            #binding-cells = <0>;
+            bindings = <&kp I>, <&kp LS(SQT)>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
         rgb_encoder_right: rgb_encoder_right {
             compatible = "zmk,behavior-sensor-rotate";
             label = "RGB_ENCODER_RIGHT";
@@ -91,7 +105,7 @@
             label = "Default";
             bindings = <
                 &kp ESC        &kp Q      &kp W       &kp F       &kp P              &kp G                           &kp J &kp L  &kp U                 &kp Y          &kp LS(NON_US_HASH) &kp BSPC
-                &kp LCTRL      &kp A      &kp R       &kp S       &lt _NAVIGATION T  &kp D                           &kp H &kp N  &kp E                 &kp SQT        &kp O               &kp LS(N2)
+                &kp LCTRL      &kp A      &kp R       &kp S       &lt _NAVIGATION T  &kp D                           &kp H &kp N  &kp E                 &en_i        &kp O               &kp LS(N2)
                 &ht LSHFT CLCK &ht LALT Z &ht LCTRL X &ht LSHFT C &kp V              &kp B                           &kp K &kp M  &ht RSHFT NON_US_HASH &ht RCTRL FSLH &ht LALT RS(N7)     &ht RSHFT RET
                                     &kp LALT  &lt _LOWER TAB    &lt _SPACE_LEFT SPACE         &kp C_PLAY_PAUSE  &kp C_MUTE       &lt _SPACE_RIGHT SPACE          &mo _RAISE     &kp RIGHT_GUI
             >;
@@ -162,7 +176,7 @@
         // ╭──────┬──────┬──────┬──────┬──────┬──────╮                          ╭──────┬──────┬──────┬──────┬──────┬──────╮
         // │      │      │      │      │      │      │                          │      │      │  Ü   │      │  :   │ DEL  │
         // ├──────┼──────┼──────┼──────┼──────┼──────┤                          ├──────┼──────┼──────┼──────┼──────┼──────┤
-        // │      │      │      │      │      │      │                          │      │      │  I   │  I   │  Ö   │   `  │
+        // │      │      │      │      │      │      │                          │      │      │      │  I   │  Ö   │   `  │
         // ├──────┼──────┼──────┼──────┼──────┼──────┤                          ├──────┼──────┼──────┼──────┼──────┼──────┤
         // │      │      │      │      │      │      │                          │      │      │  ^   │  ~   │  ?   │ ENT  │
         // ╰──────┴──────┴──────┼──────┼──────┼──────┴─╮ ╭────────╮╭────────╮ ╭─┴──────┼──────┼──────┼──────┴──────┴──────╯
@@ -171,7 +185,7 @@
             label = "Space Left";            
             bindings = <
                 &trans       &trans    &trans     &trans         &trans             &trans                     &trans          &trans      &kp RBKT            &trans         &kp LS(SLASH)   &kp DEL
-                &trans       &trans    &trans     &trans         &trans             &trans                     &trans          &trans      &kp LS(I)           &kp I          &kp COMMA       &kp RA(NON_US_HASH)
+                &trans       &trans    &trans     &trans         &trans             &trans                     &trans          &trans      &trans              &tr_i          &kp COMMA       &kp RA(NON_US_HASH)
                 &trans       &trans    &trans     &trans         &trans             &trans                     &trans          &trans      &ht RSHFT RS(N3)    &kp RA(RBKT)   &kp UNDER       &trans
                                        &kp LALT  &lt _LOWER TAB    &lt _SPACE_LEFT SPACE       &rgb_ug RGB_TOG  &ext_power EP_TOG     &lt _SPACE_RIGHT SPACE          &mo _RAISE     &kp RIGHT_GUI
             >;
