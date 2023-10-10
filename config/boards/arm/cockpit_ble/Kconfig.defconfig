@@ -21,20 +21,22 @@ config SSD1306
 config SSD1306_REVERSE_MODE
 	default y
 
-config LV_Z_VDB_SIZE
-	default 64
+endif # ZMK_DISPLAY
 
-config LV_DPI_DEF
-	default 148
+if LVGL
+config LV_Z_VDB_SIZE
+    default 64
+
+config LV_Z_DPI
+    default 148
 
 config LV_Z_BITS_PER_PIXEL
-	default 1
+    default 1
 
 choice LV_COLOR_DEPTH
-	default LV_COLOR_DEPTH_1
+    default LV_COLOR_DEPTH_1
 endchoice
-
-endif # ZMK_DISPLAY
+endif # LVGL
 
 
 if USB_DEVICE_STACK
@@ -54,7 +56,3 @@ config ZMK_USB
 	default y
 
 endif # BOARD_COCKPIT_BLE
-
-
-
-

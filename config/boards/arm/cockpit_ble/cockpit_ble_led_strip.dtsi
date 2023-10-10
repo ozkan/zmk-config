@@ -1,16 +1,12 @@
 #include <dt-bindings/led/led.h>
 #include "cockpit_ble_pinctrl.dtsi"
 
-&spi1 {
+&spi3 {
 		compatible = "nordic,nrf-spim";
 		status = "okay";
-		//mosi-pin = <22>;
-		// Unused pins, needed for SPI definition, but not used by the ws2812 driver itself.
-		//sck-pin = <46>;
-		//miso-pin = <44>;
 
-		pinctrl-0 = <&spi1_default>;
-		pinctrl-1 = <&spi1_sleep>;
+		pinctrl-0 = <&spi3_default>;
+		pinctrl-1 = <&spi3_sleep>;
 		pinctrl-names = "default", "sleep";
 
 		led_strip: ws2812@0 {
@@ -25,6 +21,7 @@
 			chain-length = <13>; /* arbitrary; change at will */
 			spi-one-frame = <0x70>;
 			spi-zero-frame = <0x40>;
+
 			color-mapping = <LED_COLOR_ID_GREEN LED_COLOR_ID_RED LED_COLOR_ID_BLUE>;
 		};
 };
