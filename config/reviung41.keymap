@@ -30,24 +30,23 @@
 // };
 
 / {
-  keymap {
-        behaviors {
-            en_i: en_i {
-                compatible = "zmk,behavior-mod-morph";
-                label = "EN_I";
-                #binding-cells = <0>;
-                bindings = <&kp SQT>, <&kp LS(I)>;
-                mods = <(MOD_LSFT|MOD_RSFT)>;
-            };
-            tr_i: tr_i {
-                compatible = "zmk,behavior-mod-morph";
-                label = "TR_I";
-                #binding-cells = <0>;
-                bindings = <&kp I>, <&kp LS(SQT)>;
-                mods = <(MOD_LSFT|MOD_RSFT)>;
-            };
+    behaviors {
+        en_i: en_i {
+            compatible = "zmk,behavior-mod-morph";
+            label = "EN_I";
+            #binding-cells = <0>;
+            bindings = <&kp SQT>, <&kp LS(I)>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
         };
-
+        tr_i: tr_i {
+            compatible = "zmk,behavior-mod-morph";
+            label = "TR_I";
+            #binding-cells = <0>;
+            bindings = <&kp I>, <&kp LS(SQT)>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+    };
+    keymap {
     compatible = "zmk,keymap";
 
     // COLEMAK LAYER (DEFAUT)
