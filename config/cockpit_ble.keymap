@@ -155,9 +155,9 @@
 
         space_right_layer {
         // ╭──────┬──────┬──────┬──────┬──────┬──────╮                          ╭──────┬──────┬──────┬──────┬──────┬──────╮
-        // │ ESC  │      │      │  €   │  £   │  Ğ   │                          │      │      │      │      │      │      │
+        // │ ESC  │      │      │  €   │  £   │  Ğ   │                          │      │      │  UP  │      │      │      │
         // ├──────┼──────┼──────┼──────┼──────┼──────┤                          ├──────┼──────┼──────┼──────┼──────┼──────┤
-        // │      │  !   │  @   │  Ş   │  ₺   │      │                          │      │      │      │      │      │      │
+        // │      │  !   │  @   │  Ş   │  ₺   │      │                          │      │ LEFT │ DOWN │ RIGHT|      │      │
         // ├──────┼──────┼──────┼──────┼──────┼──────┤                          ├──────┼──────┼──────┼──────┼──────┼──────┤
         // │      │      │      │  Ç   │      │      │                          │      │      │      │      │      │      │
         // ╰──────┴──────┴──────┼──────┼──────┼──────┴─╮ ╭────────╮╭────────╮ ╭─┴──────┼──────┼──────┼──────┴──────┴──────╯
@@ -165,9 +165,9 @@
         //                      ╰──────┴──────┴────────╯ ╰────────╯╰────────╯ ╰────────┴──────┴──────╯
             label = "Space Right";            
             bindings = <
-                &kp ESC      &trans    &trans     &kp RA(E)        &kp  RA(N2)     &kp LBKT                      &trans            &trans                  &trans          &trans   &trans    &trans
-                &trans       &kp EXCL  &kp RA(Q)  &kp SEMI         &kp  RA(T)      &trans                        &trans            &trans                  &trans          &trans   &trans    &trans
-                &trans       &trans    &trans     &ht LSHFT  DOT   &trans          &trans                        &trans            &trans                  &trans          &trans   &trans    &trans
+                &kp ESC      &trans    &trans     &kp RA(E)        &kp  RA(N2)     &kp LBKT                                      &trans            &trans                  &kp UP          &trans      &trans    &trans
+                &trans       &kp EXCL  &kp RA(Q)  &kp SEMI         &kp  RA(T)      &trans                                        &trans            &kp LEFT                &kp DOWN        &kp RIGHT   &trans    &trans
+                &trans       &trans    &trans     &ht LSHFT  DOT   &trans          &trans                                        &trans            &trans                  &trans          &trans      &trans    &trans
                                        &kp LALT  &lt _LOWER TAB    &lt _SPACE_LEFT SPACE         &kp C_PLAY_PAUSE  &kp C_MUTE       &lt _SPACE_RIGHT SPACE          &mo _RAISE     &kp RIGHT_GUI
                 >;
         };
