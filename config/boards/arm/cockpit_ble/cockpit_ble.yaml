@@ -1,7 +1,6 @@
-
 identifier: cockpit_ble
 name: Cockpit BLE
-type: mcu
+type: keyboard
 arch: arm
 toolchain:
   - zephyr
