@@ -31,13 +31,11 @@
 		compatible = "gpio-leds";
 		blue_led: led_0 {
 			gpios = <&gpio1 13 GPIO_ACTIVE_HIGH>;
-			label = "Blue LED";
 		};
 	};
 
 	left_encoder: encoder_left {
 		compatible = "alps,ec11";
-        label = "LEFT_ENCODER";
         a-gpios = <&gpio0 12 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
         b-gpios = <&gpio0 23 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
         steps = <80>;
@@ -45,7 +43,6 @@
 
     right_encoder: encoder_right {
 		compatible = "alps,ec11";
-        label = "LEFT_ENCODER";
         a-gpios = <&gpio0 21 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
         b-gpios = <&gpio0 19 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
         steps = <80>;
@@ -59,14 +56,12 @@
 
 	ext-power {
 		compatible = "zmk,ext-power-generic";
-		label = "EXT_POWER";
 		control-gpios = <&gpio1 9 GPIO_ACTIVE_LOW>;
 		init-delay-ms = <200>;
 	};
 
 	vbatt: vbatt {
 		compatible = "zmk,battery-voltage-divider";
-		label = "BATTERY";
 		io-channels = <&adc 7>;
 		output-ohms = <2130000>;
 		full-ohms = <(2130000 + 826000)>;
@@ -87,7 +82,6 @@
 
 	kscan0: kscan {
 		compatible = "zmk,kscan-gpio-matrix";
-		label = "KSCAN";
 
 		diode-direction = "col2row";
 		row-gpios
@@ -139,7 +133,6 @@
 	status = "okay";
 	cdc_acm_uart: cdc_acm_uart {
 		compatible = "zephyr,cdc-acm-uart";
-		label = "CDC_ACM_0";
 	};
 };
 

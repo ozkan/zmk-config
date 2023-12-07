@@ -45,7 +45,6 @@
 
     behaviors {
         ht: hold_tap {
-            label = "hold_tap";
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
@@ -56,27 +55,23 @@
         };
         en_i: en_i {
             compatible = "zmk,behavior-mod-morph";
-            label = "EN_I";
             #binding-cells = <0>;
             bindings = <&kp SQT>, <&kp LS(I)>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
         tr_i: tr_i {
             compatible = "zmk,behavior-mod-morph";
-            label = "TR_I";
             #binding-cells = <0>;
             bindings = <&kp I>, <&kp LS(SQT)>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
         rgb_encoder_right: rgb_encoder_right {
             compatible = "zmk,behavior-sensor-rotate";
-            label = "RGB_ENCODER_RIGHT";
             #sensor-binding-cells = <0>;
             bindings =  <&rgb_ug RGB_BRI>, <&rgb_ug RGB_BRD>;
         };
         rgb_encoder_left: rgb_encoder_left {
             compatible = "zmk,behavior-sensor-rotate";
-            label = "RGB_ENCODER_LEFT";
             #sensor-binding-cells = <0>;
             bindings = <&rgb_ug RGB_EFF>, <&rgb_ug RGB_EFR>;
         };
@@ -102,7 +97,7 @@
        // ╰──────┴──────┴──────┼──────┼──────┼──────┴─╮                      ╭─┴──────┼──────┼──────┼──────┴──────┴──────╯
        //                      │  ALT │LOWER │ SPACE  │                      │ SPACE  │RAISE │ WIN  │
        //                      ╰──────┴──────┴────────╯                      ╰────────┴──────┴──────╯            
-            label = "Colemak";
+            display-name = "Colemak";
             bindings = <
                 &kp ESC        &kp Q      &kp W       &kp F       &kp P              &kp G                           &kp J &kp L  &kp U                 &kp Y          &kp LS(NON_US_HASH) &kp BSPC
                 &kp LCTRL      &kp A      &kp R       &kp S       &lt _NAVIGATION T  &kp D                           &kp H &kp N  &kp E                 &en_i        &kp O               &kp LS(N2)
@@ -122,7 +117,7 @@
         // ╰──────┴──────┴──────┼──────┼──────┼──────┴─╮                      ╭─┴──────┼──────┼──────┼──────┴──────┴──────╯
         //                      │  ALT │LOWER │ SPACE  │                      │  ENTER │RAISE │ WIN  │
         //                      ╰──────┴──────┴────────╯                      ╰────────┴──────┴──────╯    
-            label = "Lower";        
+            display-name = "Lower";        
             bindings = <
                 &kp ESC  &trans  &trans   &trans        &trans          &trans                        &kp RS(N8)  &kp RS(N9)      &kp RS(N0)        &kp RS(N6)           &kp RA(EQUAL)  &trans
                 &trans   &trans  &trans   &trans        &trans          &trans                        &kp RA(N7)  &kp RA(N0)      &kp PLUS          &kp RA(N4)           &kp RA(N3)     &kp GRAVE
@@ -142,7 +137,7 @@
         // ╰──────┴──────┴──────┼──────┼──────┼──────┴─╮                      ╭─┴──────┼──────┼──────┼──────┴──────┴──────╯
         //                      │  ALT │LOWER │ SPACE  │                      │ SPACE  │RAISE │ WIN  │
         //                      ╰──────┴──────┴────────╯                      ╰────────┴──────┴──────╯   
-            label = "Raise";         
+            display-name = "Raise";         
             bindings = <
                 &kp ESC      &kp AMPS    &kp N1    &kp N2        &kp N3         &kp KP_MINUS                      &kp F1  &kp F2                  &kp F3            &kp F4       &trans   &kp DEL
                 &trans       &kp MINUS   &kp N4    &kp N5        &kp N6         &kp KP_PLUS                       &kp F5  &kp F6                  &kp F7            &kp F8       &trans   &trans
@@ -162,7 +157,7 @@
         // ╰──────┴──────┴──────┼──────┼──────┼──────┴─╮                      ╭─┴──────┼──────┼──────┼──────┴──────┴──────╯
         //                      │  ALT │LOWER │ SPACE  │                      │ SPACE  │RAISE │ WIN  │
         //                      ╰──────┴──────┴────────╯                      ╰────────┴──────┴──────╯
-            label = "Space Right";            
+            display-name = "Space Right";            
             bindings = <
                 &kp ESC      &trans    &trans     &kp RA(E)        &kp  RA(N2)     &kp LBKT                                      &kp C_PREV              &kp PG_UP   &kp UP                  &trans         &trans         &trans
                 &trans       &kp EXCL  &kp RA(Q)  &kp SEMI         &kp  RA(T)      &trans                                        &kp HOME                &kp LEFT    &kp DOWN                &kp RIGHT      &kp END        &kp C_PLAY_PAUSE
@@ -181,7 +176,7 @@
         // ╰──────┴──────┴──────┼──────┼──────┼──────┴─╮                      ╭─┴──────┼──────┼──────┼──────┴──────┴──────╯
         //                      │  ALT │LOWER │ SPACE  │                      │ SPACE  │RAISE │ WIN  │
         //                      ╰──────┴──────┴────────╯                      ╰────────┴──────┴──────╯
-            label = "Space Left";            
+            display-name = "Space Left";            
             bindings = <
                 &trans       &trans    &trans     &trans         &trans             &trans                     &trans          &trans      &kp RBKT            &trans         &kp LS(SLASH)   &kp DEL
                 &trans       &trans    &trans     &trans         &trans             &trans                     &trans          &trans      &trans              &tr_i          &kp COMMA       &kp RA(NON_US_HASH)
@@ -201,7 +196,7 @@
         // ╰──────┴──────┴──────┼──────┼──────┼──────┴─╮                      ╭─┴──────┼──────┼──────┼──────┴──────┴──────╯
         //                      │  ALT │LOWER │ SPACE  │                      │ SPACE  │RAISE │ WIN  │
         //                      ╰──────┴──────┴────────╯                      ╰────────┴──────┴──────╯   
-            label = "Navigation";     
+            display-name = "Navigation";     
             bindings = <
                 &kp ESC      &trans    &trans     &trans           &trans       &trans       &kp C_PREV              &kp PG_UP   &kp UP                  &trans         &trans         &trans
                 &trans       &trans    &trans     &trans           &trans       &trans       &kp HOME                &kp LEFT    &kp DOWN                &kp RIGHT      &kp END        &kp C_PLAY_PAUSE
@@ -220,7 +215,7 @@
         // ╰──────┴──────┴──────┼──────┼──────┼──────┴─╮                      ╭─┴──────┼──────┼──────┼──────┴──────┴──────╯
         //                      │  ALT │LOWER │ SPACE  │                      │ SPACE  │RAISE │ WIN  │
         //                      ╰──────┴──────┴────────╯                      ╰────────┴──────┴──────╯    
-            label = "Adjust";        
+            display-name = "Adjust";        
             bindings = <
                 &rgb_ug RGB_BRI &rgb_ug RGB_SAI &rgb_ug RGB_HUI &rgb_ug RGB_EFF &none &rgb_ug RGB_TOG              &bt BT_SEL 0 &bt BT_SEL 1  &bt BT_SEL 2 &bt BT_SEL 3       &bt BT_SEL 4        &bt BT_CLR
                 &rgb_ug RGB_BRD &rgb_ug RGB_SAD &rgb_ug RGB_HUD &rgb_ug RGB_EFR &none &none                        &none        &none         &none        &ext_power EP_ON   &ext_power EP_OFF   &ext_power EP_TOG
