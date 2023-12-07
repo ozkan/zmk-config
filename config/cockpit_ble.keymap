@@ -102,7 +102,7 @@
        // ╰──────┴──────┴──────┼──────┼──────┼──────┴─╮                      ╭─┴──────┼──────┼──────┼──────┴──────┴──────╯
        //                      │  ALT │LOWER │ SPACE  │                      │ SPACE  │RAISE │ WIN  │
        //                      ╰──────┴──────┴────────╯                      ╰────────┴──────┴──────╯            
-            label = "Default";
+            label = "Colemak";
             bindings = <
                 &kp ESC        &kp Q      &kp W       &kp F       &kp P              &kp G                           &kp J &kp L  &kp U                 &kp Y          &kp LS(NON_US_HASH) &kp BSPC
                 &kp LCTRL      &kp A      &kp R       &kp S       &lt _NAVIGATION T  &kp D                           &kp H &kp N  &kp E                 &en_i        &kp O               &kp LS(N2)
