@@ -26,13 +26,6 @@
   quick_tap_ms = <200>;
 };
 
-&left_encoder {
-     resolution = <4>; 
-};
-&right_encoder {
-     resolution = <4>; 
-};
-
 
 / {
     conditional_layers {
@@ -53,12 +46,14 @@
             global-quick-tap;
             bindings = <&kp>, <&kp>;
         };
+
         en_i: en_i {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp SQT>, <&kp LS(I)>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
+
         tr_i: tr_i {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
@@ -70,12 +65,37 @@
             #sensor-binding-cells = <0>;
             bindings =  <&rgb_ug RGB_BRI>, <&rgb_ug RGB_BRD>;
         };
+
         rgb_encoder_left: rgb_encoder_left {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
             bindings = <&rgb_ug RGB_EFF>, <&rgb_ug RGB_EFR>;
         };
+
+        next_app: next_app {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp PG_UP>, <&kp TAB>;
+            mods = <(MOD_LALT)>;
+            keep-mods = <(MOD_LALT)>;
+        };
+
+        previous_app: previous_app {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp PG_DN>, <&kp LS(TAB)>;
+            mods = <(MOD_LALT)>;
+            keep-mods = <(MOD_LALT)>;
+        };
+
+        //Switch between the running applications
+        app_encoder: app_encoder {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            bindings =  <&next_app>, <&previous_app>;
+        };
     };
+
     combos {
         compatible = "zmk,combos";
         combo_del {
@@ -104,7 +124,7 @@
                 &ht LSHFT CLCK &ht LALT Z &ht LCTRL X &ht LSHFT C &kp V              &kp B                           &kp K &kp M  &ht RSHFT NON_US_HASH &ht RCTRL FSLH &ht LALT RS(N7)     &ht RSHFT RET
                                     &kp LALT  &lt _LOWER TAB    &lt _SPACE_LEFT SPACE         &kp C_PLAY_PAUSE  &kp C_MUTE       &lt _SPACE_RIGHT SPACE          &mo _RAISE     &kp RIGHT_GUI
             >;
-            sensor-bindings = <&inc_dec_kp PG_DN PG_UP &inc_dec_kp C_VOL_UP C_VOL_DN>;
+            sensor-bindings = <&app_encoder &inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
         lower_layer {
