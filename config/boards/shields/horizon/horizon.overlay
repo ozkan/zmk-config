@@ -7,14 +7,23 @@
  #include <dt-bindings/zmk/matrix_transform.h>
 
 / {
+    behaviors {
+        hw_soft_off: hw_soft_off {
+            compatible = "zmk,behavior-soft-off";
+            #binding-cells = <0>;
+            hold-time-ms = <2000>; // Only turn off it the key is held for 2 seconds or longer.
+        };
+    };
+
     chosen {
         zmk,kscan = &kscan0;
+        wakeup-source;
+
         zmk,matrix_transform = &default_transform;
     };
 
     kscan0: kscan_0 {
         compatible = "zmk,kscan-gpio-matrix";
-        label = "KSCAN";
         diode-direction = "col2row";
 
         col-gpios

@@ -5,5 +5,4 @@ if SHIELD_HORIZON
 
 config ZMK_KEYBOARD_NAME
     default "Horizon"
-
 endif
