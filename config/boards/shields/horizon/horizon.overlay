@@ -7,14 +7,6 @@
  #include <dt-bindings/zmk/matrix_transform.h>
 
 / {
-    behaviors {
-        hw_soft_off: hw_soft_off {
-            compatible = "zmk,behavior-soft-off";
-            #binding-cells = <0>;
-            hold-time-ms = <2000>; // Only turn off it the key is held for 2 seconds or longer.
-        };
-    };
-
     chosen {
         zmk,kscan = &kscan0;
         wakeup-source;

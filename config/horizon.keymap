@@ -24,11 +24,17 @@
 
 
 / {
+    soft_off_wakers {
+        compatible = "zmk,soft-off-wakeup-sources";
+        wakeup-sources = <&kscan0>;
+    };
+
     combo_off {
         timeout-ms = <50>;
         key-positions = <30 31>;
         bindings = <&soft_off>; //The soft off behavior is used to force the keyboard into an off state. The keyboard can be turned back on again either with using the reset button found on the device.
     }; 
+
     behaviors {
         ht: hold_tap {
             compatible = "zmk,behavior-hold-tap";
