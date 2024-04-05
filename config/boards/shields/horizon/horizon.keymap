@@ -12,12 +12,11 @@
 #define SYM 1
 #define FUN 2
 
-/ {
-    soft_off_wakers {
-        compatible = "zmk,soft-off-wakeup-sources";
-        wakeup-sources = <&kscan0>;
+/ {    
+    &soft_off {
+        hold-time-ms = <2000>; // Only turn off it the key is held for 2 seconds or longer.
     };
-    
+
     combo_off {
         timeout-ms = <50>;
         key-positions = <30 31>; //esc, enter
