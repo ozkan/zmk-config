@@ -17,11 +17,16 @@
 };
 
 / {    
-    combo_off {
-        timeout-ms = <50>;
-        key-positions = <30 31>; //esc, enter
-        bindings = <&soft_off>; //The soft off behavior is used to force the keyboard into an off state. The keyboard can be turned back on again either with using the reset button found on the device.
-    }; 
+    combos {    
+        compatible = "zmk,combos";
+        s_off {
+            timeout-ms = <50>;
+            key-positions = <30 31>;
+            bindings = <&soft_off>;//The soft off behavior is used to force the keyboard into an off state. The keyboard can be turned back on again either with using the reset button found on the device.    
+        };
+        
+    };
+
 
     keymap {
         compatible = "zmk,keymap";
